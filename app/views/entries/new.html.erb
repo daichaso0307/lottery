@@ -1,0 +1,49 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">ホームゲーム優先入場　事前抽選お申込みフォーム</div>
+      <div class="form">
+        <div class="form-body">
+
+          <div class="form-line">
+            <span class="no-must"></span>
+            <span class="form-title">ゲーム種別</span>
+            <span class="fwb">ちばぎんカップ</span>
+          </div>
+          <div class="form-line">
+            <span class="no-must"></span>
+            <span class="form-title">対戦カード</span>
+            <span class="fwb">ジェフユナイテッド市原・千葉&nbsp;VS&nbsp;柏レイソル</span>
+          </div>
+          <div class="form-line">
+            <span class="no-must"></span>
+            <span class="form-title">対戦日時</span>
+            <span class="fwb">2018年2月4日&nbsp;13:00キックオフ</span>
+          </div>
+
+          <%= form_for @entry do |f| %>
+          <div class="form-group">
+            <%= f.label :"シーズンシートID", class: 'text-white' %>
+            <%= f.text_field :season_id, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :"名前", class: 'text-white' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :"同伴人数", class: 'text-white' %>
+            <%= f.text_field :person, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :"ゲート" %><br>
+            <label><%= f.radio_button :gate_id, "1" %> 西1ゲート</label>
+            <label><%= f.radio_button :gate_id, "2" %> 北2ゲート</label>
+            <label><%= f.radio_button :gate_id, "3" %> 東2ゲート</label>
+          </div>
+
+          <%= f.submit "登録", class: 'btn-block btn-white' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

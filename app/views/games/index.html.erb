@@ -1,0 +1,22 @@
+<table class="table4" border=1>
+  <tr>
+    <th>年</th>
+    <th>節</th>
+    <th>対戦カード</th>
+    <th>キックオフ時間</th>
+  </tr>
+  <% @games.each do |game| %>
+  <tr>
+    <td><%= game.year %></td>
+    <td><%= game.game_id %></td>
+    <td><%= game.name %></td>
+    <td><%= game.kickoff_time %></td>
+    <% deadline_flag = 0 %>
+    <% if deadline_flag == 0 %>
+      <td><%= link_to "申込", new_entry_path %></td>
+    <% else %>
+      <td></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
